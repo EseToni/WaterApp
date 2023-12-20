@@ -1,17 +1,18 @@
-import colors from '@styles/colors/colors';
 import { StyleSheet } from 'react-native';
 
-const countMl = StyleSheet.create({
+const imageProgressStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: 'red',
+    flex: 5,
   },
   text: {
     fontSize: 50,
     fontWeight: 'bold',
-    color: colors.blueDark,
+    color: '#0A0A0A',
     marginLeft: 5,
   },
 });
 
-export default countMl;
+export default imageProgressStyle;

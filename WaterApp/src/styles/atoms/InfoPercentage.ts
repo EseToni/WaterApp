@@ -1,17 +1,15 @@
 import colors from '@styles/colors/colors';
 import { StyleSheet } from 'react-native';
 
-const countMl = StyleSheet.create({
+const infoPercentageStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   text: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    color: colors.blueDark,
-    marginLeft: 5,
+    fontSize: 20,
+    color: colors.greyLight,
   },
 });
 
-export default countMl;
+export default infoPercentageStyles;
