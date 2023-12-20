@@ -1,3 +1,4 @@
+import countMl from '@styles/atoms/countMl';
 import React from 'react';
 import { View, Text } from 'react-native';
 
@@ -7,8 +8,8 @@ type CountMlProps = {
 
 const CountMl: React.FC<CountMlProps> = ({ count }) => {
   return (
-    <View>
-      <Text>{count} ml</Text>
+    <View style={countMl.container}>
+      <Text style={countMl.text}>{count}ml</Text>
     </View>
   );
 };
