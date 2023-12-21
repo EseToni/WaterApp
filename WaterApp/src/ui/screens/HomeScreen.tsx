@@ -10,6 +10,7 @@ import NavBar from '@ui/components/NavBar';
 import ImageProgress from '@ui/components/imageProgress';
 import React from 'react';
 import { View, Text } from 'react-native';
+import CustomText from '@ui/components/custom/CustomText';
 
 type HomeScreenProps = {
   navigation: NavigationProp<ParamListBase>;
@@ -23,7 +24,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, route }) => {
         <CountMl count={200} />
         <InfoPercentage countPercentage={23} />
       </View>
-      <ImageProgress />
+      <CustomText />
       <NavBar />
     </View>
   );
