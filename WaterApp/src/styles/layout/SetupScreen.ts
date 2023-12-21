@@ -12,7 +12,6 @@ export const ScreenStyles = StyleSheet.create({
     padding: 15,
     marginBottom: 10,
     borderRadius: 10,
-    elevation: 2,
   },
   switchCard: {
     padding: 15,
@@ -25,11 +24,6 @@ export const ScreenStyles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 50,
     borderRadius: 30,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    elevation: 2,
   },
   title: {
     fontSize: 18,

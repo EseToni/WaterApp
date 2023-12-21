@@ -4,11 +4,7 @@ import { Text } from 'react-native';
 
 type CustomTextProps = {
   children: React.ReactNode;
-  styleFont:
-    | 'MontserratMedium'
-    | 'MontserratBold'
-    | 'MontserratSemiBold'
-    | 'MontserratRegular';
+  styleFont: 'CoreSansBold';
   styles: object;
 };
 
@@ -18,10 +14,7 @@ const CustomText: React.FC<CustomTextProps> = ({
   styles,
 }) => {
   const [loaded] = useFonts({
-    MontserratMedium: require('../../../../assets/fonts/Montserrat-Medium.ttf'),
-    MontserratBold: require('../../../../assets/fonts/Montserrat-Bold.ttf'),
-    MontserratSemiBold: require('../../../../assets/fonts/Montserrat-SemiBold.ttf'),
-    MontserratRegular: require('../../../../assets/fonts/Montserrat-Regular.ttf'),
+    CoreSansBold: require('../../../../assets/fonts/CoreSansBold.otf'),
   });
   if (!loaded) {
     return null;

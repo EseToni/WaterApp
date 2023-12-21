@@ -1,4 +1,5 @@
 import { ScreenStyles } from '@styles/layout/SetupScreen';
+import CustomText from '@ui/components/custom/CustomText';
 import React, { useState } from 'react';
 import { View, ScrollView, Text, Switch } from 'react-native';
 
@@ -30,8 +31,12 @@ const SwitchCard = ({ title, subtitle }) => {
   return (
     <View style={ScreenStyles.switchCard}>
       <View style={ScreenStyles.header}>
-        <Text style={ScreenStyles.title}>{title}</Text>
-        <Text style={ScreenStyles.subtitle}>{subtitle}</Text>
+        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.title}>
+          {title}
+        </CustomText>
+        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.subtitle}>
+          {subtitle}
+        </CustomText>
       </View>
       <View style={ScreenStyles.switchContainer}>
         <Switch
