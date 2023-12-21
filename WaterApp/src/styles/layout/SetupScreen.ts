@@ -8,10 +8,10 @@ export const ScreenStyles = StyleSheet.create({
     padding: 15,
   },
   card: {
-    backgroundColor: '#f2f2f2',
+    backgroundColor: colors.greyLight,
     padding: 15,
     marginBottom: 10,
-    borderRadius: 10,
+    borderRadius: 20,
   },
   switchCard: {
     padding: 15,
@@ -31,9 +31,14 @@ export const ScreenStyles = StyleSheet.create({
     marginBottom: 5,
     textAlign: 'left',
   },
+  titleCard: {
+    fontSize: 18,
+    marginBottom: 5,
+    textAlign: 'left',
+  },
   customTitle: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 5,
     textAlign: 'left',
@@ -51,11 +56,10 @@ export const ScreenStyles = StyleSheet.create({
   customSubtitle: {
     color: 'white',
     fontSize: 16,
-    marginBottom: 8,
     textAlign: 'left',
   },
   text: {
-    color: 'grey',
+    color: colors.blueLight,
     fontSize: 14,
     lineHeight: 20,
     textAlign: 'left',
@@ -65,7 +69,7 @@ export const ScreenStyles = StyleSheet.create({
   },
   switchContainer: {
     position: 'absolute',
-    top: 10,
+    top: 0,
     right: 10,
   },
 });

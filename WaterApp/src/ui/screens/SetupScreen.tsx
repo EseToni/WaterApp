@@ -16,7 +16,7 @@ const CustomCard = ({ title, subtitle, text }) => {
 const Card = ({ title }) => {
   return (
     <View style={ScreenStyles.card}>
-      <Text style={ScreenStyles.title}>{title}</Text>
+      <Text style={ScreenStyles.titleCard}>{title}</Text>
     </View>
   );
 };
@@ -31,17 +31,17 @@ const SwitchCard = ({ title, subtitle }) => {
   return (
     <View style={ScreenStyles.switchCard}>
       <View style={ScreenStyles.header}>
-        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.title}>
+        <CustomText styleFont="NunitoBold" styles={ScreenStyles.title}>
           {title}
         </CustomText>
-        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.subtitle}>
+        <CustomText styleFont="NunitoBold" styles={ScreenStyles.subtitle}>
           {subtitle}
         </CustomText>
       </View>
       <View style={ScreenStyles.switchContainer}>
         <Switch
           trackColor={{ false: '#767577', true: '#81b0ff' }}
-          thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+          thumbColor={isEnabled ? '#5B8CE0' : '#f4f3f4'}
           onValueChange={toggleSwitch}
           value={isEnabled}
         />

@@ -2,6 +2,7 @@ import routes from '@common/constants/routes';
 import { HeaderStyles } from '@styles/components/SetupHeader';
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import CustomText from '../custom/CustomText';
 
 export const SetupHeaderButtonLeft = ({ navigation }) => {
   return (
@@ -24,7 +25,9 @@ export const SetupHeaderButtonRight = ({ navigation }) => {
         navigation.navigate(routes['SETUP']);
       }}
     >
-      <Text style={{ color: 'red' }}>NOVEDADES</Text>
+      <CustomText styleFont="NunitoBold" styles={{ ...HeaderStyles.text }}>
+        NOVEDADES
+      </CustomText>
     </TouchableOpacity>
   );
 };

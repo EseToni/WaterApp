@@ -8,6 +8,7 @@ import {
   SetupHeaderButtonLeft,
   SetupHeaderButtonRight,
 } from '@ui/components/headers/SetupHeader';
+import CalendarScreen from '@ui/screens/CalendarScreen';
 import HomeScreen from '@ui/screens/HomeScreen';
 import SetupScreen from '@ui/screens/SetupScreen';
 import { Platform, View } from 'react-native';
@@ -45,6 +46,14 @@ const StackNavigator = () => {
         options={({ navigation }) => ({
           headerLeft: () => <SetupHeaderButtonLeft navigation={navigation} />,
           headerRight: () => <SetupHeaderButtonRight navigation={navigation} />,
+        })}
+      />
+      <Stack.Screen
+        name={routes['CALENDAR']}
+        component={CalendarScreen}
+        options={({ navigation }) => ({
+          headerLeft: () => <HomeHeaderButtonLeft navigation={navigation} />,
+          headerRight: () => <HomeHeaderButtonRight navigation={navigation} />,
         })}
       />
     </Stack.Navigator>

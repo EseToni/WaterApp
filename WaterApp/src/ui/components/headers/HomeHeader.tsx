@@ -11,7 +11,7 @@ export const HomeHeaderButtonLeft = ({ navigation }) => {
         ...HeaderStyles.buttonTime,
       }}
       onPress={() => {
-        // Lógica al presionar el botón
+        navigation.navigate(routes['CALENDAR']);
       }}
     >
       <Text style={{ color: 'white' }}>1</Text>
