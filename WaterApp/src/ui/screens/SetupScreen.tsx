@@ -31,10 +31,10 @@ const SwitchCard = ({ title, subtitle }) => {
   return (
     <View style={ScreenStyles.switchCard}>
       <View style={ScreenStyles.header}>
-        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.title}>
+        <CustomText styleFont="NunitoBold" styles={ScreenStyles.title}>
           {title}
         </CustomText>
-        <CustomText styleFont="CoreSansBold" styles={ScreenStyles.subtitle}>
+        <CustomText styleFont="NunitoBold" styles={ScreenStyles.subtitle}>
           {subtitle}
         </CustomText>
       </View>

@@ -1,6 +1,7 @@
 import infoPercentageStyles from '@styles/atoms/InfoPercentage';
+import CustomText from '@ui/components/custom/CustomText';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 type InfoPercentageProps = {
   countPercentage: number;
@@ -9,9 +10,9 @@ type InfoPercentageProps = {
 const InfoPercentage: React.FC<InfoPercentageProps> = ({ countPercentage }) => {
   return (
     <View style={infoPercentageStyles.container}>
-      <Text style={infoPercentageStyles.text}>
+      <CustomText styleFont="NunitoSemiBold" styles={infoPercentageStyles.text}>
         Hidratación · {countPercentage}% de tu meta
-      </Text>
+      </CustomText>
     </View>
   );
 };
