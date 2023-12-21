@@ -2,7 +2,21 @@ import { useFonts } from 'expo-font';
 import React from 'react';
 import { Text } from 'react-native';
 
-const CustomText = ({ children, styleFont, styles }) => {
+type CustomTextProps = {
+  children: React.ReactNode;
+  styleFont:
+    | 'MontserratMedium'
+    | 'MontserratBold'
+    | 'MontserratSemiBold'
+    | 'MontserratRegular';
+  styles: object;
+};
+
+const CustomText: React.FC<CustomTextProps> = ({
+  children,
+  styleFont,
+  styles,
+}) => {
   const [loaded] = useFonts({
     MontserratMedium: require('../../../../assets/fonts/Montserrat-Medium.ttf'),
     MontserratBold: require('../../../../assets/fonts/Montserrat-Bold.ttf'),

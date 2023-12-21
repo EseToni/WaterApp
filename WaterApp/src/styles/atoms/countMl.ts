@@ -8,7 +8,6 @@ const countMl = StyleSheet.create({
   },
   text: {
     fontSize: 50,
-    fontWeight: 'bold',
     color: colors.blueDark,
     marginLeft: 5,
   },

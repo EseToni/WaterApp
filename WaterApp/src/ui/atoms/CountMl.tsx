@@ -1,6 +1,7 @@
 import countMl from '@styles/atoms/countMl';
+import CustomText from '@ui/components/custom/CustomText';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 type CountMlProps = {
   count: number;
@@ -9,7 +10,9 @@ type CountMlProps = {
 const CountMl: React.FC<CountMlProps> = ({ count }) => {
   return (
     <View style={countMl.container}>
-      <Text style={countMl.text}>{count}ml</Text>
+      <CustomText styleFont="MontserratSemiBold" styles={countMl.text}>
+        {count}ml
+      </CustomText>
     </View>
   );
 };
