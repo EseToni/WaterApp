@@ -8,7 +8,7 @@ const infoPercentageStyles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    color: colors.greyLight,
+    color: colors.grey,
   },
 });
 

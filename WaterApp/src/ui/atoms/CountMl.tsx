@@ -10,7 +10,7 @@ type CountMlProps = {
 const CountMl: React.FC<CountMlProps> = ({ count }) => {
   return (
     <View style={countMl.container}>
-      <CustomText styleFont="CoreSansBold" styles={countMl.text}>
+      <CustomText styleFont="NunitoBold" styles={countMl.text}>
         {count}ml
       </CustomText>
     </View>

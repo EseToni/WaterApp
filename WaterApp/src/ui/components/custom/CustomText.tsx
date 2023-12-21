@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 
 type CustomTextProps = {
   children: React.ReactNode;
-  styleFont: 'CoreSansBold';
+  styleFont: 'NunitoBold' | 'NunitoRegular' | 'NunitoMedium' | 'NunitoSemiBold';
   styles: object;
 };
 
@@ -14,7 +14,10 @@ const CustomText: React.FC<CustomTextProps> = ({
   styles,
 }) => {
   const [loaded] = useFonts({
-    CoreSansBold: require('../../../../assets/fonts/CoreSansBold.otf'),
+    NunitoBold: require('../../../../assets/fonts/Nunito-Bold.ttf'),
+    NunitoRegular: require('../../../../assets/fonts/Nunito-Regular.ttf'),
+    NunitoMedium: require('../../../../assets/fonts/Nunito-Medium.ttf'),
+    NunitoSemiBold: require('../../../../assets/fonts/Nunito-SemiBold.ttf'),
   });
   if (!loaded) {
     return null;
