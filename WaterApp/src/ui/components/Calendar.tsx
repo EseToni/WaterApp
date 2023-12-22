@@ -1,6 +1,6 @@
+import CalendarStyles from '@styles/components/CalendarStyle';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
 const Calendar = () => {
   const daysOfWeek = ['L', 'M', 'X', 'J', 'V', 'S', 'D']; // Cambiado el orden de los días
   const currentDate = new Date();
@@ -17,31 +17,52 @@ const Calendar = () => {
     1,
   ).getDay();
 
-  // Reorganizando los días para comenzar por el lunes
-  const reorganizedDays = [...daysOfWeek.slice(1), daysOfWeek[0]];
-
   // Ajustando la lógica para renderizar los días del mes
   const renderDays = () => {
     const days = [];
     let day = 1;
+    const today = new Date(); // Obtener la fecha actual
+    const currentMonth = currentDate.toLocaleString('default', {
+      month: 'long',
+    });
 
     for (let i = 0; i < 6; i++) {
       const row = [];
       for (let j = 0; j < 7; j++) {
         if ((i === 0 && j < firstDayOfMonth - 1) || day > daysInMonth) {
-          // Cambiando el valor inicial
-          row.push(<View style={styles.dayContainer} key={`${i}-${j}`} />);
-        } else {
           row.push(
-            <View style={styles.dayContainer} key={`${i}-${j}`}>
-              <Text style={styles.dayText}>{day}</Text>
+            <View style={CalendarStyles.dayContainer} key={`${i}-${j}`} />,
+          );
+        } else {
+          let content = <Text style={CalendarStyles.dayText}>{day}</Text>;
+
+          // Obtener la fecha del día actual en el bucle
+          const currentDay = new Date(currentYear, currentDate.getMonth(), day);
+
+          if (currentDay.toDateString() === today.toDateString()) {
+            content = (
+              <View style={CalendarStyles.todayCircle} key={`${i}-${j}`}>
+                <Text style={CalendarStyles.todayText}>{day}</Text>
+              </View>
+            );
+          } else if (currentDay < today) {
+            content = (
+              <View style={CalendarStyles.pastDayCircle} key={`${i}-${j}`}>
+                {/* No incluir el texto en el círculo gris */}
+              </View>
+            );
+          }
+
+          row.push(
+            <View style={CalendarStyles.dayContainer} key={`${i}-${j}`}>
+              {content}
             </View>,
           );
           day++;
         }
       }
       days.push(
-        <View style={styles.weekRow} key={i}>
+        <View style={CalendarStyles.weekRow} key={i}>
           {row}
         </View>,
       );
@@ -49,78 +70,26 @@ const Calendar = () => {
 
     return days;
   };
-
   return (
-    <View style={styles.container}>
-      <View style={styles.monthTitle}>
-        <Text style={styles.monthText}>
+    <View style={CalendarStyles.container}>
+      <View style={CalendarStyles.monthTitle}>
+        <Text style={CalendarStyles.monthText}>
           {currentMonth} {currentYear}
         </Text>
       </View>
       {/* Días de la semana */}
-      <View style={styles.header}>
+      <View style={CalendarStyles.header}>
         {daysOfWeek.map((day, index) => (
-          <Text key={index} style={styles.weekDay}>
+          <Text key={index} style={CalendarStyles.weekDay}>
             {day}
           </Text>
         ))}
       </View>
 
       {/* Números de los días del mes */}
-      <View style={styles.calendarBody}>{renderDays()}</View>
+      <View style={CalendarStyles.calendarBody}>{renderDays()}</View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    padding: 10,
-    margin: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 3,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 10,
-  },
-  weekDay: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  calendarBody: {
-    flexDirection: 'column',
-  },
-  weekRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 10,
-  },
-  dayContainer: {
-    width: 30,
-    height: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: '#ccc',
-  },
-  dayText: {
-    fontSize: 14,
-  },
-  monthTitle: {
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  monthText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-});
 
 export default Calendar;
